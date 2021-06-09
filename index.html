@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Random Number Genertor</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+	<style>
+	body{
+		background-color: #6b6d70;
+	}
+	header {
+		color: #ffffff;
+		font-weight: 600;
+		text-align: center;
+	}
+	article{
+		display: grid;
+		width: 400px;
+		margin: 2em auto;
+		min-height: 500px;
+		background-color: rgba(240, 87, 39, 0.75);
+		grid-template-rows: auto auto 1fr auto;
+		border-radius: 1em;
+		overflow: hidden;
+		box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	}
+	article > * {
+		padding: 1em;
+	}
+	#generate {
+		padding: 0.5em;
+		display: block;
+		width: 6em;
+		margin:  0.5em auto;
+		text-align: center;
+
+		background-color: rgba(255, 255, 255, 0.75);
+		border-radius: 999px;
+		box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+
+		cursor: pointer;
+		user-select: none;
+	}
+	figure {
+		color: #ffffff;
+		font-size: 2em;
+		font-weight: 600;
+	}
+
+	</style>
+	<script>
+
+		$(function() {
+			// Handler for .ready() called.
+			$('#generate').click(function() {
+				//alert( "Handler for .click() called." );
+
+				var value_4 = Math.trunc (Math.random() * (9999 - 1) + 1000);
+				$('#digit-4').text(value_4);
+
+				var value_6 = Math.trunc (Math.random() * (999999 - 1) + 100000);
+				$('#digit-6').text(value_6);
+
+				var value_8 = Math.trunc (Math.random() * (99999999 - 1) + 10000000);
+				$('#digit-8').text(value_8);
+			});
+		});
+
+	</script>
+</head>
+<body>
+
+	<article>
+		<header>
+			Random Number Generator
+		</header>
+		<section>
+			Hit the generate button to make a new selection of random numbers.
+			These number are not stored anywhere and are honestly random.
+			<a id="generate">Generate</a>
+		</section>
+		<main>
+			<ul>
+				<li>4-Digits: <figure id="digit-4">1234</figure></li>
+				<li>6-Digits: <figure id="digit-6">123456</figure></li>
+				<li>8-Digits: <figure id="digit-8">12345678</figure></li>
+		</main>
+		<footer>
+			Last Updated: 2021-06-09
+		</footer>
+	</article>
+
+
+</body>
+</html>
