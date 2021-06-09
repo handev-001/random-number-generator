@@ -58,14 +58,15 @@
 			// Handler for .ready() called.
 			$('#generate').click(function() {
 				//alert( "Handler for .click() called." );
+				//function =TRUNC ( RAND() *(High - Low) + Low)
 
-				var value_4 = Math.trunc (Math.random() * (9999 - 1) + 1000);
+				var value_4 = Math.trunc(Math.random() * (9999 - 1000) + 1000);
 				$('#digit-4').text(value_4);
 
-				var value_6 = Math.trunc (Math.random() * (999999 - 1) + 100000);
+				var value_6 = Math.trunc(Math.random() * (999999 - 100000) + 100000);
 				$('#digit-6').text(value_6);
 
-				var value_8 = Math.trunc (Math.random() * (99999999 - 1) + 10000000);
+				var value_8 = Math.trunc(Math.random() * (99999999 - 10000000) + 10000000);
 				$('#digit-8').text(value_8);
 			});
 		});
